@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: my-pg-backend
+    runtime: python-3.11
+    plan: free
+    buildCommand: "cd backend && pip install -r requirements.txt"
+    startCommand: "cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: POSTGRES_CONNECTION
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_ALGORITHM
+        value: "HS256"
+      - key: JWT_EXPIRE_HOURS
+        value: "8"
+      - key: CLIENT_ORIGIN
+        sync: false

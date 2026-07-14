@@ -1,0 +1,52 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+render.env
+netlify.env
+
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Testing
+.pytest_cache/
+htmlcov/
+
+# Temporary files
+*.tmp
+*.bak
+debug_*.py

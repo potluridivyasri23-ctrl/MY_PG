@@ -1,0 +1,13 @@
+services:
+  - type: static
+    name: my-pg-frontend
+    buildCommand: "cd frontend-react && npm install && npm run build"
+    publishPath: "frontend-react/dist"
+    autoDeploy: true
+    envVars:
+      - key: VITE_API_BASE
+        value: "https://my-pg-backend.onrender.com"
+    routes:
+      - path: "/*"
+        destination: "/index.html"
+        type: rewrite
