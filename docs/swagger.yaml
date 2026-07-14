@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: MY-PG Management System API
+  version: 1.0.0
+  description: REST API for managing PG accommodations, tenants, bookings, complaints, and notices.
+servers:
+  - url: http://localhost:5000/api
+paths:
+  /auth/login:
+    post:
+      summary: Login to the system
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login successful
+  /dashboard:
+    get:
+      summary: Fetch dashboard overview
+      responses:
+        '200':
+          description: Dashboard data
+  /rooms:
+    get:
+      summary: List rooms
+  /tenants:
+    get:
+      summary: List tenants
+    post:
+      summary: Add a tenant
+  /complaints:
+    get:
+      summary: List complaints
+    post:
+      summary: Raise a complaint
